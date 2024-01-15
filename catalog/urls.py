@@ -27,6 +27,7 @@ urlpatterns = [
     ),
     path("routes/", RouteListView.as_view(), name="route-list"),
     path("routes/<int:pk>/", RouteDetailView.as_view(), name="route-detail"),
+    path("accounts/", include("django.contrib.auth")),
 ]
 
 app_name = "catalog"
