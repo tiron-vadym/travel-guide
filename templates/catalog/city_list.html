@@ -1,0 +1,7 @@
+<ul>
+    {% for city in city_list %}
+        <li>
+            <strong>ID:</strong> <a href="{% url "city-detail" pk=city.pk %}">{{ city.id }}</a>
+        </li>
+    {% endfor %}
+</ul>

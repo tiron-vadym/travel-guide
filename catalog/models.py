@@ -3,7 +3,8 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    pass
+    def __str__(self) -> str:
+        return self.username
 
 
 class City(models.Model):
@@ -13,12 +14,18 @@ class City(models.Model):
     coordinates = models.CharField(max_length=255)
     attractions = models.TextField()
 
+    def __str__(self) -> str:
+        return self.name
+
 
 class Review(models.Model):
     rating = models.IntegerField()
     comment = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     city = models.ForeignKey(City, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return f"{self.rating} - {self.comment}"
 
 
 class Route(models.Model):
@@ -27,3 +34,6 @@ class Route(models.Model):
     budget = models.DecimalField(max_digits=10, decimal_places=2)
     points_of_interest = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self) -> str:
+        return self.name

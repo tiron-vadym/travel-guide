@@ -1,0 +1,7 @@
+<ul>
+    {% for review in review_list %}
+        <li>
+            <strong>ID:</strong> <a href="{% url "review-detail" pk=review.pk %}">{{ review.id }}</a>
+        </li>
+    {% endfor %}
+</ul>
