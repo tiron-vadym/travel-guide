@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Route list</h1>
+  {% if route_list %}
+    <ul>
+      {% for route in route_list %}
+        <li>
+          <strong>ID:</strong><a style="float: right" href={% url "catalog:route-create" %}>+</a>
+          <a href="{% url 'catalog:route-detail' pk=route.pk %}">
+            {{ route.id }} - {{ route.name }}
+          </a>
+          <span style="float: right">
+            <a href="{% url 'catalog:route-update' pk=route.id %}">UPDATE</a>
+            <a href="{% url 'catalog:route-delete' pk=route.id %}">DELETE</a>
+          </span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no routes in the catalog</p>
+  {% endif %}
+{% endblock %}

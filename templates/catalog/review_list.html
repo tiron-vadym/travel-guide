@@ -1,7 +1,18 @@
-<ul>
-    {% for review in review_list %}
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Review list</h1>
+  {% if review_list %}
+    <ul>
+      {% for review in review_list %}
         <li>
-            <strong>ID:</strong> <a href="{% url "review-detail" pk=review.pk %}">{{ review.id }}</a>
+          <strong>ID:</strong> <a href="{% url 'catalog:review-detail' pk=review.pk %}">
+            {{ review.id }} - {{ review.rating }}
+          </a>
         </li>
-    {% endfor %}
-</ul>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no reviews in the catalog</p>
+  {% endif %}
+{% endblock %}

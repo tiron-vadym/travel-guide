@@ -1,8 +1,15 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.urls import reverse_lazy
 from django.http import HttpRequest, HttpResponse
-from django.views.generic import ListView, DetailView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    UpdateView,
+    DeleteView
+)
 
 from catalog.models import User, City, Review, Route
 
@@ -50,6 +57,27 @@ class CityDetailView(LoginRequiredMixin, DetailView):
     context_object_name = "city"
 
 
+class CityCreateView(LoginRequiredMixin, CreateView):
+    model = City
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:city-list")
+    template_name = "catalog/city_form.html"
+
+
+class CityUpdateView(LoginRequiredMixin, UpdateView):
+    model = City
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:city-list")
+    template_name = "catalog/city_form.html"
+
+
+class CityDeleteView(LoginRequiredMixin, DeleteView):
+    model = City
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:city-list")
+    template_name = "catalog/city_confirm_delete.html"
+
+
 class ReviewListView(LoginRequiredMixin, ListView):
     model = Review
     template_name = "review_list.html"
@@ -62,6 +90,27 @@ class ReviewDetailView(LoginRequiredMixin, DetailView):
     context_object_name = "review"
 
 
+class ReviewCreateView(LoginRequiredMixin, CreateView):
+    model = Review
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:review-list")
+    template_name = "catalog/review_form.html"
+
+
+class ReviewUpdateView(LoginRequiredMixin, UpdateView):
+    model = Review
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:review-list")
+    template_name = "catalog/review_form.html"
+
+
+class ReviewDeleteView(LoginRequiredMixin, DeleteView):
+    model = Review
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:review-list")
+    template_name = "catalog/review_confirm_delete.html"
+
+
 class RouteListView(LoginRequiredMixin, ListView):
     model = Route
     template_name = "route_list.html"
@@ -72,3 +121,24 @@ class RouteDetailView(LoginRequiredMixin, DetailView):
     model = Route
     template_name = "route_detail.html"
     context_object_name = "route"
+
+
+class RouteCreateView(LoginRequiredMixin, CreateView):
+    model = Route
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:route-list")
+    template_name = "catalog/route_form.html"
+
+
+class RouteUpdateView(LoginRequiredMixin, UpdateView):
+    model = Route
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:route-list")
+    template_name = "catalog/route_form.html"
+
+
+class RouteDeleteView(LoginRequiredMixin, DeleteView):
+    model = Route
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:route-list")
+    template_name = "catalog/route_confirm_delete.html"

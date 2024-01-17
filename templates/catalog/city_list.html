@@ -1,7 +1,18 @@
-<ul>
-    {% for city in city_list %}
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>City list</h1>
+  {% if city_list %}
+    <ul>
+      {% for city in city_list %}
         <li>
-            <strong>ID:</strong> <a href="{% url "city-detail" pk=city.pk %}">{{ city.id }}</a>
+          <strong>ID:</strong> <a href="{% url 'catalog:city-detail' pk=city.pk %}">
+            {{ city.id }} - {{ city.name }}
+          </a>
         </li>
-    {% endfor %}
-</ul>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>There are no cities in the catalog</p>
+  {% endif %}
+{% endblock %}
