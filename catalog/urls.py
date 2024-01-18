@@ -4,6 +4,8 @@ from catalog import views
 from .views import (
     UserListView,
     UserDetailView,
+    UserCreateView,
+    UserDeleteView,
     CityListView,
     CityDetailView,
     CityCreateView,
@@ -18,14 +20,20 @@ from .views import (
     RouteDetailView,
     RouteCreateView,
     RouteUpdateView,
-    RouteDeleteView,
+    RouteDeleteView, UserDeleteView,
 )
 
 
 urlpatterns = [
     path("", views.index, name="index"),
     path("users", UserListView.as_view(), name="user-list"),
-    path("users/<int:pk>/", UserDetailView.as_view(), name="user-detail"),
+    path("user/<int:pk>/", UserDetailView.as_view(), name="user-detail"),
+    path("user/create/", UserCreateView.as_view(), name="user-create"),
+    path(
+        "user/<int:pk>/delete/",
+        UserDeleteView.as_view(),
+        name="user-delete"
+    ),
     path("cities/", CityListView.as_view(), name="city-list"),
     path("city/<int:pk>/", CityDetailView.as_view(), name="city-detail"),
     path(

@@ -12,6 +12,7 @@ from django.views.generic import (
 )
 
 from catalog.models import User, City, Review, Route
+from catalog.forms import UserCreationForm
 
 
 @login_required
@@ -43,6 +44,17 @@ class UserDetailView(LoginRequiredMixin, DetailView):
     model = User
     template_name = "user_detail.html"
     context_object_name = "user"
+
+
+class UserCreateView(LoginRequiredMixin, CreateView):
+    model = User
+    success_url = reverse_lazy("catalog:user-list")
+    form_class = UserCreationForm
+
+
+class UserDeleteView(LoginRequiredMixin, DeleteView):
+    model = User
+    success_url = reverse_lazy("catalog:user-list")
 
 
 class CityListView(ListView):
