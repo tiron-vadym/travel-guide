@@ -2,9 +2,9 @@
 
 {% block content %}
   <h1>User list</h1>
-  {% if user_list %}
+  {% if users %}
     <ul>
-      {% for user in user_list %}
+      {% for user in users %}
         <li>
           <strong>ID:</strong> <a href="{% url 'catalog:user-detail' pk=user.pk %}">
             {{ user.id }} - {{ user.username }}

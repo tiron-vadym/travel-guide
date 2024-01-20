@@ -4,10 +4,10 @@
       <a href="{% url 'catalog:user-detail' user.id %}">User: {{ user.username }}</a>
     </li>
     <li>
-      <a href="{% url 'logout' %}">Logout</a>
+      <a href="{% url 'catalog:logout' %}">Logout</a>
   {% else %}
     <li>
-      <a href="{% url 'login' %}">Login</a>
+      <a href="{% url 'catalog:login' %}">Login</a>
     </li>
   {% endif %}
   <li><a href="{% url 'catalog:index' %}">Home page</a></li>

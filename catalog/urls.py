@@ -20,7 +20,7 @@ from .views import (
     RouteDetailView,
     RouteCreateView,
     RouteUpdateView,
-    RouteDeleteView, UserDeleteView,
+    RouteDeleteView,
 )
 
 

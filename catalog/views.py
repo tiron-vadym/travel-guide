@@ -12,7 +12,12 @@ from django.views.generic import (
 )
 
 from catalog.models import User, City, Review, Route
-from catalog.forms import UserCreationForm
+from catalog.forms import (
+    UserCreationForm,
+    UserSearchForm,
+    CitySearchForm,
+    RouteSearchForm
+)
 
 
 @login_required
@@ -38,6 +43,24 @@ class UserListView(LoginRequiredMixin, ListView):
     model = User
     template_name = "user_list.html"
     context_object_name = "users"
+    paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(UserListView, self).get_context_data(**kwargs)
+        username = self.request.GET.get("username", "")
+        context["search_form"] = UserSearchForm(
+            initial={"username": username}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = User.objects.all()
+        form = UserSearchForm(self.request.GET)
+        if form.is_valid():
+            queryset = queryset.filter(
+                username__icontains=form.cleaned_data["username"]
+            )
+        return queryset
 
 
 class UserDetailView(LoginRequiredMixin, DetailView):
@@ -61,6 +84,24 @@ class CityListView(ListView):
     model = City
     template_name = "city_list.html"
     context_object_name = "cities"
+    paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(CityListView, self).get_context_data(**kwargs)
+        name = self.request.GET.get("name", "")
+        context["search_form"] = CitySearchForm(
+            initial={"name": name}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = City.objects.all()
+        form = CitySearchForm(self.request.GET)
+        if form.is_valid():
+            queryset = queryset.filter(
+                name__icontains=form.cleaned_data["name"]
+            )
+        return queryset
 
 
 class CityDetailView(LoginRequiredMixin, DetailView):
@@ -94,6 +135,7 @@ class ReviewListView(LoginRequiredMixin, ListView):
     model = Review
     template_name = "review_list.html"
     context_object_name = "reviews"
+    paginate_by = 5
 
 
 class ReviewDetailView(LoginRequiredMixin, DetailView):
@@ -127,6 +169,24 @@ class RouteListView(LoginRequiredMixin, ListView):
     model = Route
     template_name = "route_list.html"
     context_object_name = "routes"
+    paginate_by = 5
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super(RouteListView, self).get_context_data(**kwargs)
+        name = self.request.GET.get("name", "")
+        context["search_form"] = RouteSearchForm(
+            initial={"name": name}
+        )
+        return context
+
+    def get_queryset(self):
+        queryset = Route.objects.all()
+        form = RouteSearchForm(self.request.GET)
+        if form.is_valid():
+            queryset = queryset.filter(
+                name__icontains=form.cleaned_data["name"]
+            )
+        return queryset
 
 
 class RouteDetailView(LoginRequiredMixin, DetailView):
