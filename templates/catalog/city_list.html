@@ -2,9 +2,9 @@
 
 {% block content %}
   <h1>City list</h1>
-  {% if city_list %}
+  {% if cities %}
     <ul>
-      {% for city in city_list %}
+      {% for city in cities %}
         <li>
           <strong>ID:</strong> <a href="{% url 'catalog:city-detail' pk=city.pk %}">
             {{ city.id }} - {{ city.name }}

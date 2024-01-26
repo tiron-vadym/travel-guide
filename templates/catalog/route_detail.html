@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
 <h2>Route Detail</h2>
 <ul>
     <li><strong>ID:</strong> {{ route.id }}</li>
@@ -7,3 +10,4 @@
     <li><strong>Points of Interest:</strong> {{ route.points_of_interest }}</li>
     <li><strong>Author:</strong> {{ route.author.username }}</li>
 </ul>
+{% endblock %}

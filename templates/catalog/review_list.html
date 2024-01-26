@@ -2,12 +2,12 @@
 
 {% block content %}
   <h1>Review list</h1>
-  {% if review_list %}
+  {% if reviews %}
     <ul>
-      {% for review in review_list %}
+      {% for review in reviews %}
         <li>
           <strong>ID:</strong> <a href="{% url 'catalog:review-detail' pk=review.pk %}">
-            {{ review.id }} - {{ review.rating }}
+            {{ review.id }} - {{ review.author.username }}
           </a>
         </li>
       {% endfor %}

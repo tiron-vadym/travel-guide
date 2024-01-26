@@ -2,9 +2,9 @@
 
 {% block content %}
   <h1>Route list</h1>
-  {% if route_list %}
+  {% if routes %}
     <ul>
-      {% for route in route_list %}
+      {% for route in routes %}
         <li>
           <strong>ID:</strong><a style="float: right" href={% url "catalog:route-create" %}>+</a>
           <a href="{% url 'catalog:route-detail' pk=route.pk %}">

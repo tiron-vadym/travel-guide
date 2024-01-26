@@ -1,0 +1,224 @@
+[
+  {
+    "model": "catalog.user",
+    "pk": 1,
+    "fields": {
+      "username": "john_doe",
+      "email": "john.doe@example.com",
+      "password": "pbkdf2_sha256$30000$BpZZ15ZNtsmg$gf3pUK1T5v0ICR63G4TZlZHrGq1H7SJViPhtYUtzKvQ=",
+      "first_name": "John",
+      "last_name": "Doe"
+    }
+  },
+  {
+    "model": "catalog.user",
+    "pk": 2,
+    "fields": {
+      "username": "jane_smith",
+      "email": "jane.smith@example.com",
+      "password": "pbkdf2_sha256$30000$LbR0JL0zFkkQ$wn5J9dU0deI3npsxjHrrj1NjiPU4VzU6IhKqfEKx2SI=",
+      "first_name": "Jane",
+      "last_name": "Smith"
+    }
+  },
+  {
+    "model": "catalog.user",
+    "pk": 3,
+    "fields": {
+      "username": "mike_johnson",
+      "email": "mike.johnson@example.com",
+      "password": "pbkdf2_sha256$30000$2FEP7Wj7GanM$4qVrviQptmD6nW1m3Afb36uMqRUQgzZdXet2ggGvFjs=",
+      "first_name": "Mike",
+      "last_name": "Johnson"
+    }
+  },
+  {
+    "model": "catalog.user",
+    "pk": 4,
+    "fields": {
+      "username": "emily_williams",
+      "email": "emily.williams@example.com",
+      "password": "pbkdf2_sha256$30000$y2LtvlnZuqgT$5t8WDABDXhnpn86vHJDKyZ6hik9H0w2ZDoKSZwZ2EJY=",
+      "first_name": "Emily",
+      "last_name": "Williams"
+    }
+  },
+  {
+    "model": "catalog.user",
+    "pk": 5,
+    "fields": {
+      "username": "david_brown",
+      "email": "david.brown@example.com",
+      "password": "pbkdf2_sha256$30000$9SxMyDxgKWpE$k2fZtz02E7Wufi22ePyr3dVh0BSVklIa3kK53a6u44E=",
+      "first_name": "David",
+      "last_name": "Brown"
+    }
+  },
+  {
+    "model": "catalog.user",
+    "pk": 6,
+    "fields": {
+    "username": "olivia_white",
+    "email": "olivia.white@example.com",
+    "password": "pbkdf2_sha256$30000$v3I4AptCxKBn$yNKxer7cIwH3jJ1Ljou8hY1UVEobrMjjfuA1ChHUNxY=",
+    "first_name": "Olivia",
+    "last_name": "White"
+    }
+  },
+  {
+    "model": "catalog.city",
+    "pk": 1,
+    "fields": {
+      "name": "New York City",
+      "country": "USA",
+      "population": 8000000,
+      "attractions": "Times Square, Central Park, Empire State Building"
+    }
+  },
+  {
+    "model": "catalog.city",
+    "pk": 2,
+    "fields": {
+      "name": "Los Angeles",
+      "country": "USA",
+      "population": 4000000,
+      "attractions": "Hollywood Walk of Fame, Santa Monica Pier, Getty Center"
+    }
+  },
+  {
+    "model": "catalog.city",
+    "pk": 3,
+    "fields": {
+      "name": "London",
+      "country": "UK",
+      "population": 9000000,
+      "attractions": "Big Ben, Buckingham Palace, British Museum"
+    }
+  },
+  {
+    "model": "catalog.city",
+    "pk": 4,
+    "fields": {
+      "name": "Tokyo",
+      "country": "Japan",
+      "population": 14000000,
+      "attractions": "Tokyo Tower, Senso-ji Temple, Shinjuku Gyoen National Garden"
+    }
+  },
+  {
+    "model": "catalog.city",
+    "pk": 5,
+    "fields": {
+      "name": "Chicago",
+      "country": "USA",
+      "population": 2700000,
+      "attractions": "Millennium Park, Art Institute of Chicago, Navy Pier"
+    }
+  },
+  {
+    "model": "catalog.review",
+    "pk": 1,
+    "fields": {
+      "rating": 5,
+      "comment": "Amazing city with vibrant energy!",
+      "author": 1,
+      "city": 1
+    }
+  },
+  {
+    "model": "catalog.review",
+    "pk": 2,
+    "fields": {
+      "rating": 4,
+      "comment": "Lovely attractions and great weather!",
+      "author": 2,
+      "city": 2
+    }
+  },
+  {
+    "model": "catalog.review",
+    "pk": 3,
+    "fields": {
+      "rating": 3,
+      "comment": "Good experience exploring the city.",
+      "author": 3,
+      "city": 3
+    }
+  },
+  {
+    "model": "catalog.review",
+    "pk": 4,
+    "fields": {
+      "rating": 5,
+      "comment": "Breathtaking views and rich cultural experience.",
+      "author": 4,
+      "city": 4
+    }
+  },
+  {
+    "model": "catalog.review",
+    "pk": 5,
+    "fields": {
+      "rating": 4,
+      "comment": "Enjoyed my time in this lively city!",
+      "author": 5,
+      "city": 5
+    }
+  },
+  {
+    "model": "catalog.route",
+    "pk": 1,
+    "fields": {
+      "name": "East Coast Adventure",
+      "duration": "7 days",
+      "budget": 1500,
+      "points_of_interest": "New York City, Washington D.C., Philadelphia",
+      "author": 1
+    }
+  },
+  {
+    "model": "catalog.route",
+    "pk": 2,
+    "fields": {
+      "name": "California Dreaming",
+      "duration": "5 days",
+      "budget": 1200,
+      "points_of_interest": "Los Angeles, San Francisco, San Diego",
+      "author": 2
+    }
+  },
+  {
+    "model": "catalog.route",
+    "pk": 3,
+    "fields": {
+      "name": "European Capitals Tour",
+      "duration": "10 days",
+      "budget": 2500,
+      "points_of_interest": "London, Paris, Rome",
+      "author": 3
+    }
+  },
+  {
+    "model": "catalog.route",
+    "pk": 4,
+    "fields": {
+      "name": "Tokyo Adventure",
+      "duration": "7 days",
+      "budget": 1800,
+      "points_of_interest": "Tokyo, Kyoto, Osaka",
+      "author": 4
+    }
+  },
+  {
+    "model": "catalog.route",
+    "pk": 5,
+    "fields": {
+      "name": "Midwest Discovery",
+      "duration": "6 days",
+      "budget": 1400,
+      "points_of_interest": "Chicago, Milwaukee, Minneapolis",
+      "author": 5
+    }
+  }
+]
+

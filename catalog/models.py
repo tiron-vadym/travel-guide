@@ -11,7 +11,6 @@ class City(models.Model):
     name = models.CharField(max_length=255)
     country = models.CharField(max_length=255)
     population = models.IntegerField()
-    coordinates = models.CharField(max_length=255)
     attractions = models.TextField()
 
     def __str__(self) -> str:

@@ -1,9 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
 <h2>City Detail</h2>
 <ul>
     <li><strong>ID:</strong> {{ city.id }}</li>
     <li><strong>Name:</strong> {{ city.name }}</li>
     <li><strong>Country:</strong> {{ city.country }}</li>
     <li><strong>Population:</strong> {{ city.population }}</li>
-    <li><strong>Coordinates:</strong> {{ city.coordinates }}</li>
     <li><strong>Attractions:</strong> {{ city.attractions }}</li>
 </ul>
+{% endblock %}

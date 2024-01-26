@@ -65,7 +65,7 @@ class UserListView(LoginRequiredMixin, ListView):
 
 class UserDetailView(LoginRequiredMixin, DetailView):
     model = User
-    template_name = "user_detail.html"
+    template_name = "catalog/user_detail.html"
     context_object_name = "user"
 
 
@@ -106,7 +106,7 @@ class CityListView(ListView):
 
 class CityDetailView(LoginRequiredMixin, DetailView):
     model = City
-    template_name = "city_detail.html"
+    template_name = "catalog/city_detail.html"
     context_object_name = "city"
 
 
@@ -140,7 +140,7 @@ class ReviewListView(LoginRequiredMixin, ListView):
 
 class ReviewDetailView(LoginRequiredMixin, DetailView):
     model = Review
-    template_name = "review_detail.html"
+    template_name = "catalog/review_detail.html"
     context_object_name = "review"
 
 
@@ -191,7 +191,7 @@ class RouteListView(LoginRequiredMixin, ListView):
 
 class RouteDetailView(LoginRequiredMixin, DetailView):
     model = Route
-    template_name = "route_detail.html"
+    template_name = "catalog/route_detail.html"
     context_object_name = "route"
 
 
