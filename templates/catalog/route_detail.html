@@ -9,5 +9,11 @@
     <li><strong>Budget:</strong> {{ route.budget }}</li>
     <li><strong>Points of Interest:</strong> {{ route.points_of_interest }}</li>
     <li><strong>Author:</strong> {{ route.author.username }}</li>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <span>
+        <a href="{% url 'catalog:route-update' pk=route.id %}" class="btn bg-gradient-warning me-2">UPDATE</a>
+        <a href="{% url 'catalog:route-delete' pk=route.id %}" class="btn bg-gradient-danger">DELETE</a>
+      </span>
+    </div>
 </ul>
 {% endblock %}

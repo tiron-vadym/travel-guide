@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h2>City Detail</h2>
-<ul>
+  <h2>City Detail</h2>
+  <ul>
     <li><strong>ID:</strong> {{ city.id }}</li>
     <li><strong>Name:</strong> {{ city.name }}</li>
     <li><strong>Country:</strong> {{ city.country }}</li>
     <li><strong>Population:</strong> {{ city.population }}</li>
     <li><strong>Attractions:</strong> {{ city.attractions }}</li>
-</ul>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+      <span>
+        <a href="{% url 'catalog:city-update' pk=city.id %}" class="btn bg-gradient-warning me-2">UPDATE</a>
+        <a href="{% url 'catalog:city-delete' pk=city.id %}" class="btn bg-gradient-danger">DELETE</a>
+      </span>
+    </div>
+  </ul>
 {% endblock %}

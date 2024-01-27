@@ -1,19 +1,22 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>Route list</h1>
+  <h1 class="mb-4">Route list <a href={% url "catalog:route-create" %}>+</a></h1>
   {% if routes %}
+    
+    <form method="get" action="" class="form-inline mb-4">
+      {{ search_form|crispy }}
+      <input class="btn bg-gradient-light w-auto me-2" type="submit" value="Search">
+    </form>
+    
     <ul>
       {% for route in routes %}
         <li>
-          <strong>ID:</strong><a style="float: right" href={% url "catalog:route-create" %}>+</a>
+          <strong>ID:</strong>
           <a href="{% url 'catalog:route-detail' pk=route.pk %}">
             {{ route.id }} - {{ route.name }}
           </a>
-          <span style="float: right">
-            <a href="{% url 'catalog:route-update' pk=route.id %}">UPDATE</a>
-            <a href="{% url 'catalog:route-delete' pk=route.id %}">DELETE</a>
-          </span>
         </li>
       {% endfor %}
     </ul>

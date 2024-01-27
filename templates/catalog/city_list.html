@@ -1,14 +1,21 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>City list</h1>
+  <h1 class="mb-4">City list <a href={% url "catalog:city-create" %}>+</a></h1>
   {% if cities %}
+    
+    <form method="get" action="" class="form-inline mb-4">
+      {{ search_form|crispy }}
+      <input class="btn bg-gradient-light w-auto me-2" type="submit" value="Search">
+    </form>
     <ul>
       {% for city in cities %}
         <li>
           <strong>ID:</strong> <a href="{% url 'catalog:city-detail' pk=city.pk %}">
             {{ city.id }} - {{ city.name }}
           </a>
+          </span>
         </li>
       {% endfor %}
     </ul>

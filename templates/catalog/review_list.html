@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Review list</h1>
+  <h1>Review list <a href={% url "catalog:route-create" %}>+</a></h1>
   {% if reviews %}
     <ul>
       {% for review in reviews %}
