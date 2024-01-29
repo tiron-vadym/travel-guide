@@ -20,8 +20,8 @@ class City(models.Model):
 class Review(models.Model):
     rating = models.IntegerField()
     comment = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
-    city = models.ForeignKey(City, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reviews")
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name="reviews")
 
     def __str__(self) -> str:
         return f"{self.rating} - {self.comment}"
@@ -32,7 +32,7 @@ class Route(models.Model):
     duration = models.DurationField()
     budget = models.DecimalField(max_digits=10, decimal_places=2)
     points_of_interest = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="routes")
 
     def __str__(self) -> str:
         return self.name

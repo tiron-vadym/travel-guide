@@ -1,0 +1,8 @@
+black==23.12.1
+bootstrap4==0.1.0
+crispy==0.7.4
+crispy-bootstrap4==2023.1
+Django==5.0.0
+django-crispy-forms==2.1
+flake8==7.0.0
+python-dotenv==1.0.0

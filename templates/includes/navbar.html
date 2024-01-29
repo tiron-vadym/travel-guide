@@ -29,6 +29,11 @@
         <li class="nav-item mx-2">
           <a class="nav-link" href="{% url 'catalog:route-list' %}">Routes</a>
         </li>
+        {% if user.is_authenticated %}
+          <li>
+            <a class="nav-link" href="{% url 'catalog:user-detail' user.id %}">User: {{ user.username }}</a>
+          </li>
+        {% endif %}
       </ul>
       <ul class="navbar-nav d-lg-block d-none">
         {% if user.is_authenticated %}

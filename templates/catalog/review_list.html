@@ -1,18 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Review list <a href={% url "catalog:route-create" %}>+</a></h1>
-  {% if reviews %}
-    <ul>
-      {% for review in reviews %}
-        <li>
-          <strong>ID:</strong> <a href="{% url 'catalog:review-detail' pk=review.pk %}">
-            {{ review.id }} - {{ review.author.username }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>There are no reviews in the catalog</p>
-  {% endif %}
+  <div class="container d-flex justify-content-center">
+    <div>
+    <h1 class="mb-4 mt-4">Review list <a href={% url "catalog:route-create" %}>+</a></h1>
+    {% if reviews %}
+      <ul>
+        {% for review in reviews %}
+          <li>
+            <strong>ID:</strong> <a href="{% url 'catalog:review-detail' pk=review.pk %}">
+              {{ review.id }} - {{ review.author.username }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>There are no reviews in the catalog</p>
+    </div>
+  </div>
+    {% endif %}
 {% endblock %}
