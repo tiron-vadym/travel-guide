@@ -139,4 +139,6 @@ AUTH_USER_MODEL = "catalog.User"
 
 LOGIN_REDIRECT_URL = "/catalog/"
 
+LOGOUT_REDIRECT_URL = '/'
+
 CRISPY_TEMPLATE_PACK = "bootstrap4"
