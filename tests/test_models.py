@@ -10,7 +10,6 @@ class ModelTests(TestCase):
             name="test",
             country="test",
             population="100000",
-            coordinates="test",
             attractions="test"
         )
         self.assertEqual(str(city), city.name)
@@ -33,7 +32,6 @@ class ModelTests(TestCase):
             name="test",
             country="test",
             population="100000",
-            coordinates="test",
             attractions="test"
         )
         review = Review.objects.create(

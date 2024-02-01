@@ -1,16 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="container d-flex justify-content-center">
-    <div>
-      <h2 class="mb-4 mt-4">User Detail</h2>
-      <ul>
+  <div class="page-header flex-column align-items-start pt-8 min-vh-100"
+       style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80');"
+       loading="lazy">
+    <div class="container-fluid d-flex justify-content-center" style="margin-top: 20px">
+      <div class="card p-4">
+        <h1 class="mb-4 mt-4 container-fluid d-flex justify-content-center">User Detail</h1>
+
+        <ul class="px-4">
           <li><strong>ID:</strong> {{ user.id }}</li>
           <li><strong>Username:</strong> {{ user.username }}</li>
           <li><strong>Email:</strong> {{ user.email }}</li>
           <li><strong>First Name:</strong> {{ user.first_name }}</li>
           <li><strong>Last Name:</strong> {{ user.last_name }}</li>
-      </ul>
+        </ul>
+        {% if user.pk == request.user.pk %}
+          <div class="text-center">
+            <a href="{% url 'catalog:user-update' pk=user.pk %}" class="btn bg-gradient-warning me-2"
+               style="width: fit-content;">UPDATE</a>
+          </div>
+        {% endif %}
+      </div>
     </div>
+    {% include "includes/pagination.html" %}
   </div>
 {% endblock %}

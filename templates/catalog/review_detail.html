@@ -1,22 +1,29 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
-  <div class="container d-flex justify-content-center">
-    <div>
-      <h2 class="mb-4 mt-4">Review Detail</h2>
-      <ul>
+  <div class="page-header flex-column align-items-start pt-8 min-vh-100"
+       style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80');"
+       loading="lazy">
+    <div class="container-fluid d-flex justify-content-center" style="margin-top: 20px">
+      <div class="card p-4">
+        <h1 class="mb-4 mt-4 container-fluid d-flex justify-content-center">Review Detail</h1>
+
+        <ul class="px-4">
           <li><strong>ID:</strong> {{ review.id }}</li>
           <li><strong>Rating:</strong> {{ review.rating }}</li>
           <li><strong>Comment:</strong> {{ review.comment }}</li>
           <li><strong>Author:</strong> {{ review.author.username }}</li>
           <li><strong>City:</strong> {{ review.city.name }}</li>
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <span>
-              <a href="{% url 'catalog:review-update' pk=review.id %}" class="btn bg-gradient-warning me-2">UPDATE</a>
-              <a href="{% url 'catalog:review-delete' pk=review.id %}" class="btn bg-gradient-danger">DELETE</a>
-            </span>
+          <div class="d-flex justify-content-center align-items-center mt-5">
+          <span>
+            <a href="{% url 'catalog:review-update' pk=review.id %}" class="btn bg-gradient-warning me-2">UPDATE</a>
+            <a href="{% url 'catalog:review-delete' pk=review.id %}" class="btn bg-gradient-danger">DELETE</a>
+          </span>
           </div>
-      </ul>
+        </ul>
+      </div>
     </div>
+    {% include "includes/pagination.html" %}
   </div>
 {% endblock %}

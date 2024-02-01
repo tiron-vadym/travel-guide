@@ -2,29 +2,35 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <div class="container d-flex justify-content-center">
-    <div>
-  <h1 class="mb-4 mt-4">Route list <a href={% url "catalog:route-create" %}>+</a></h1>
-  {% if routes %}
-    
-    <form method="get" action="" class="form-inline mb-4">
-      {{ search_form|crispy }}
-      <input class="btn bg-gradient-light w-auto me-2" type="submit" value="Search">
-    </form>
-    
-    <ul>
-      {% for route in routes %}
-        <li>
-          <strong>ID:</strong>
-          <a href="{% url 'catalog:route-detail' pk=route.pk %}">
-            {{ route.id }} - {{ route.name }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>There are no routes in the catalog</p>
+  <div class="page-header flex-column align-items-start pt-8 min-vh-100"
+       style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80');"
+       loading="lazy">
+    <div class="container-fluid d-flex justify-content-center" style="margin-top: 20px">
+      <div class="card">
+        <h1 class="mb-4 mt-4 container-fluid d-flex justify-content-center">Route list<a href="{% url 'catalog:route-create' %}" class="btn btn-primary link-to-page ml-4 mt-1">Create</a></h1>
+        <p class="container-fluid d-flex justify-content-center lead px-5">On the page you will find a list of available routes <br>for travel and excursions. There are a variety <br>of itineraries that can be chosen for trips <br>of different types and durations. You will <br>be able to learn about the main attractions <br>that are included in each itinerary.</p>
+        {% if routes %}
+
+          <form method="get" action="" class="form-inline mb-4 container-fluid d-flex justify-content-center">
+            {{ search_form|crispy }}
+            <input class="btn bg-gradient-light w-auto m-0" type="submit" value="Search">
+          </form>
+          <div style="margin-left:100px">
+            <ul>
+              {% for route in routes %}
+                <li class="container d-flex">
+                  <strong>ID:</strong> <a href="{% url 'catalog:route-detail' pk=route.pk %}">
+                  {{ route.id }} - {{ route.name }}
+                </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          <p>There are no routes in the catalog</p>
+        {% endif %}
+      </div>
     </div>
+    {% include "includes/pagination.html" %}
   </div>
-  {% endif %}
 {% endblock %}

@@ -7,7 +7,9 @@
       "email": "john.doe@example.com",
       "password": "pbkdf2_sha256$30000$BpZZ15ZNtsmg$gf3pUK1T5v0ICR63G4TZlZHrGq1H7SJViPhtYUtzKvQ=",
       "first_name": "John",
-      "last_name": "Doe"
+      "last_name": "Doe",
+      "is_superuser": true,
+      "is_staff": true
     }
   },
   {

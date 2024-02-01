@@ -2,58 +2,35 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <div class="container d-flex justify-content-center">
-    <div>
-      <h1 class="mb-4 mt-4">City list <a href={% url "catalog:city-create" %}>+</a></h1>
-      {% if cities %}
+  <div class="page-header flex-column align-items-start pt-8 min-vh-100"
+       style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80');"
+       loading="lazy">
+    <div class="container-fluid d-flex justify-content-center" style="margin-top: 20px">
+      <div class="card">
+        <h1 class="mb-4 mt-4 container-fluid d-flex justify-content-center">City list<a href="{% url 'catalog:city-create' %}" class="btn btn-primary link-to-page ml-4 mt-1">Create</a></h1>
+        <p class="container-fluid d-flex justify-content-center lead px-5">On the page you will find a list <br> of all cities available in the application. <br> Here you can familiarize yourself with all <br> the cities that are registered in the <br> system, as well as view their main details. <br> This page allows you to conveniently view <br> and manage the list of cities in your application.
+        {% if cities %}
 
-        <form method="get" action="" class="form-inline mb-4">
-          {{ search_form|crispy }}
-          <input class="btn bg-gradient-light w-auto me-2" type="submit" value="Search">
-        </form>
-        <ul>
-          {% for city in cities %}
-            <li>
-              <strong>ID:</strong> <a href="{% url 'catalog:city-detail' pk=city.pk %}">
-                {{ city.id }} - {{ city.name }}
-              </a>
-              </span>
-            </li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <p>There are no cities in the catalog</p>
-      {% endif %}
+          <form method="get" action="" class="form-inline mb-4 container-fluid d-flex justify-content-center">
+            {{ search_form|crispy }}
+            <input class="btn bg-gradient-light w-auto m-0" type="submit" value="Search">
+          </form>
+          <div style="margin-left:100px">
+            <ul>
+              {% for city in cities %}
+                <li class="container d-flex">
+                  <strong>ID:</strong> <a href="{% url 'catalog:city-detail' pk=city.pk %}">
+                  {{ city.id }} - {{ city.name }}
+                </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          <p>There are no cities in the catalog</p>
+        {% endif %}
+      </div>
     </div>
+    {% include "includes/pagination.html" %}
   </div>
 {% endblock %}
-
-
-
-{#{% extends "base.html" %}#}
-{#{% load crispy_forms_filters %}#}
-{##}
-{#{% block content %}#}
-{#  <div class="page-header min-vh-100" style="background-image: url('{% static 'img/fone.png' %}');" loading="lazy">#}
-{#    <h1 class="mb-4">City list <a href={% url "catalog:city-create" %}>+</a></h1>#}
-{#    {% if cities %}#}
-{#      #}
-{#      <form method="get" action="" class="form-inline mb-4">#}
-{#        {{ search_form|crispy }}#}
-{#        <input class="btn bg-gradient-light w-auto me-2" type="submit" value="Search">#}
-{#      </form>#}
-{#      <ul>#}
-{#        {% for city in cities %}#}
-{#          <li>#}
-{#            <strong>ID:</strong> <a href="{% url 'catalog:city-detail' pk=city.pk %}">#}
-{#              {{ city.id }} - {{ city.name }}#}
-{#            </a>#}
-{#            </span>#}
-{#          </li>#}
-{#        {% endfor %}#}
-{#      </ul>#}
-{#    {% else %}#}
-{#      <p>There are no cities in the catalog</p>#}
-{#    {% endif %}#}
-{#  </div>#}
-{#{% endblock %}#}

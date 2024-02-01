@@ -149,3 +149,13 @@ class SearchTests(TestCase):
             response.context["object_list"],
             User.objects.filter(username__icontains="newuser2"),
         )
+
+
+class LogoutTest(TestCase):
+    def test_logout_redirect(self):
+
+        logout_url = reverse('logout')
+
+        response = self.client.get(logout_url)
+
+        self.assertEqual(response.status_code, 302)

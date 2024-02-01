@@ -17,7 +17,7 @@ python manage.py runserver
 
 #### 1. Use the following command to load prepared data from fixture to test and debug your code <br>
 
-`python manage.py loaddata taxi_service_db_data.json`
+`python manage.py loaddata travel_guide_db_data.json`
 
 #### 2. After loading data from fixture you can use following superuser (or create another one by yourself)
 

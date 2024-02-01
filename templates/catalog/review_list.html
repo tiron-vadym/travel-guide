@@ -1,22 +1,33 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
-  <div class="container d-flex justify-content-center">
-    <div>
-    <h1 class="mb-4 mt-4">Review list <a href={% url "catalog:route-create" %}>+</a></h1>
-    {% if reviews %}
-      <ul>
-        {% for review in reviews %}
-          <li>
-            <strong>ID:</strong> <a href="{% url 'catalog:review-detail' pk=review.pk %}">
-              {{ review.id }} - {{ review.author.username }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p>There are no reviews in the catalog</p>
+  <div class="page-header flex-column align-items-start pt-8 min-vh-100"
+       style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1950&amp;q=80');"
+       loading="lazy">
+    <div class="container-fluid d-flex justify-content-center" style="margin-top: 20px">
+      <div class="card">
+        <h1 class="mb-4 mt-4 container-fluid d-flex justify-content-center">Review list<a href="{% url 'catalog:review-create' %}" class="btn btn-primary link-to-page ml-4 mt-1">Create</a></h1>
+        <p class="container-fluid d-flex justify-content-center lead px-5">On the page, you can view all the user reviews of <br>the various reviews that are available in the app. <br>Here you can read the impressions and opinions <br>of users about various aspects of the facilities <br>and their maintenance. This page gives you the <br>opportunity to get information about the opinions and <br>impressions of other users before making your choice.</p>
+        {% if reviews %}
+
+
+          <div style="margin-left:150px">
+            <ul>
+              {% for review in reviews %}
+                <li class="container d-flex">
+                  <strong>ID:</strong> <a href="{% url 'catalog:review-detail' pk=review.pk %}">
+                  {{ review.id }} - {{ review.author.username }}
+                </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% else %}
+          <p>There are no reviews in the catalog</p>
+        {% endif %}
+      </div>
     </div>
+    {% include "includes/pagination.html" %}
   </div>
-    {% endif %}
 {% endblock %}

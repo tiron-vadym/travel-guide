@@ -75,6 +75,13 @@ class UserCreateView(LoginRequiredMixin, CreateView):
     form_class = UserCreationForm
 
 
+class UserUpdateView(LoginRequiredMixin, UpdateView):
+    model = User
+    fields = "__all__"
+    success_url = reverse_lazy("catalog:user-list")
+    template_name = "catalog/user_form.html"
+
+
 class UserDeleteView(LoginRequiredMixin, DeleteView):
     model = User
     success_url = reverse_lazy("catalog:user-list")

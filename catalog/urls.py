@@ -5,6 +5,7 @@ from .views import (
     UserListView,
     UserDetailView,
     UserCreateView,
+    UserUpdateView,
     UserDeleteView,
     CityListView,
     CityDetailView,
@@ -33,6 +34,11 @@ urlpatterns = [
         "user/<int:pk>/delete/",
         UserDeleteView.as_view(),
         name="user-delete"
+    ),
+    path(
+        "user/<int:pk>/update/",
+        UserUpdateView.as_view(),
+        name="user-update"
     ),
     path("cities/", CityListView.as_view(), name="city-list"),
     path("city/<int:pk>/", CityDetailView.as_view(), name="city-detail"),
@@ -88,8 +94,7 @@ urlpatterns = [
         "route/<int:pk>/delete/",
         RouteDeleteView.as_view(),
         name="route-delete"
-    ),
-    path("accounts/", include("django.contrib.auth.urls")),
+    )
 ]
 
 app_name = "catalog"
