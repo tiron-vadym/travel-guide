@@ -1,0 +1,71 @@
+[33mcommit fb73fd43d651c81d0942f19baea1425f06ab667c[m[33m ([m[1;36mHEAD[m[33m)[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Tue Jan 16 13:32:20 2024 +0200
+
+    Add urls for Create, Update, Delete.
+
+[33mcommit cdb790dde77d2068157065813bd7ef6c7f998089[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Mon Jan 15 18:30:53 2024 +0200
+
+    In User's list view add (Me), if this is a current user
+
+[33mcommit c21965f933874a2b8e6088229264361c1dd08fb6[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Mon Jan 15 17:00:56 2024 +0200
+
+    Implement a visit counter on the home screen, create login/logout screens
+
+[33mcommit 6e211c5ac6070d5a0c53cb4ef2e5a28419646f74[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Mon Jan 15 14:30:22 2024 +0200
+
+    Add templates for each model and pagination
+
+[33mcommit 1353ff0c68f3657870702872fd88e5bbe965cfdd[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Fri Jan 12 15:28:33 2024 +0200
+
+    Create home page with url, view and templates
+
+[33mcommit fa6c57216a45c0fb74b292b6094d5b0dabd055f9[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Fri Jan 12 14:23:39 2024 +0200
+
+    Create admin panel
+
+[33mcommit bf1b014ab6d426f831d9bde6ed295ce197bf2a81[m[33m ([m[1;31morigin/main[m[33m, [m[1;32mmain[m[33m)[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Fri Jan 12 12:15:41 2024 +0200
+
+    Create User, City, Review and Route models
+
+[33mcommit 2dad1bfdbf02df30619a35f97ed24b002e9bf421[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Thu Jan 11 15:11:41 2024 +0200
+
+    add new empty app catalog
+
+[33mcommit cc8edea8775aebe4a522645fc73e1fd90367ba9f[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Thu Jan 11 15:10:18 2024 +0200
+
+    add pychache to gitignore
+
+[33mcommit 530b4498a3cea14b55132cfcd80a25e4ae1e3841[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Thu Jan 11 14:35:02 2024 +0200
+
+    Initialize empty django project with name travel guide
+
+[33mcommit 98cbac0bbe8ec4c4ccc562621a822c1bc77f3fd7[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Thu Jan 11 14:30:53 2024 +0200
+
+    add .gitignore with .idea and .venv
+
+[33mcommit 7a120520db8f99345449d18e2ab93976045c90d2[m
+Author: Vadym Tiron <tironvadim1@gmail.com>
+Date:   Thu Jan 11 14:16:47 2024 +0200
+
+    add README.md with project name
