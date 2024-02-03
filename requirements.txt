@@ -40,6 +40,7 @@ flake8-quotes==3.3.2
 flake8-variables-names==0.0.5
 fonttools==4.47.2
 fqdn==1.5.1
+gunicorn==21.2.0
 h5py==3.10.0
 hdf5plugin==4.3.0
 idna==3.4
