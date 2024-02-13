@@ -18,7 +18,7 @@
           <div class="text-center mt-4">
             <input type="submit" value="Submit" class="btn bg-gradient-primary w-auto me-2">
           </div>
-          <input type="hidden" name="next" value="{{ next }}"/>
+          <input type="hidden" name="next" value="{% url 'catalog:index' %}"/>
         </form>
       </div>
     </div>
