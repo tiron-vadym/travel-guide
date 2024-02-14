@@ -85,7 +85,15 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
-    }
+    },
+    "remote": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "avwygecg",
+        "USER": "avwygecg",
+        "PASSWORD": "OwsimLg6Owl-TdSZ82RwfUdUHJOmNYhU",
+        "HOST": "snuffleupagus.db.elephantsql.com",
+        "PORT": "",
+    },
 }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
