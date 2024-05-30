@@ -1,10 +1,12 @@
-# Travel Guide
+# WanderWise 
 
-The Travel Guide project is a web application designed to provide users with comprehensive information about various cities, attractions, routes, and user reviews worldwide. It serves as a platform for travelers to discover new destinations, plan their trips, and share their experiences with others.
+WanderWise is a web application designed to provide users with comprehensive information about various
+cities, attractions, routes, and user reviews worldwide. It serves as a platform for travelers to discover new
+destinations, plan their trips, and share their experiences with others.
 
 ## Check it out!
 
-[Travel-guide project deployed to Render](https://travel-guide-3u2f.onrender.com/)
+[WanderWise project deployed to Render](https://travel-guide-3u2f.onrender.com/)
 
 ## Installing
 
@@ -23,7 +25,8 @@ python manage.py runserver
 
 * Manage routes: Add, delete and edit travel routes with a user-friendly interface.
 
-* Reviews and Ratings: Users can leave reviews and rate routes, allowing other users to receive valuable tips and recommendations.
+* Reviews and Ratings: Users can leave reviews and rate routes, allowing other users to receive valuable tips and
+  recommendations.
 
 * City management: Add new cities, describe them and add them to routes.
 
@@ -33,11 +36,12 @@ python manage.py runserver
 
 * Pagination: Displaying a list of items as pages to improve page loading speed.
 
-
 ## Demo
+
 ![img.png](img.png)
 
 ## Test Credentials
+
 To test the functionality, you can use the following credentials:
 
 Username: user
